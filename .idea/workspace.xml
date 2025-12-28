@@ -4,41 +4,95 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acd0ef16-524f-463d-8899-4f7da4cbb94e" name="Changes" comment="" />
+    <list default="true" id="6d9b6b75-a3cf-47a8-9101-e003de8ef91d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Tp_Archi_Dis_SOAP.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/SoapApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/exception/InvalidAgenceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/exception/LitException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/exception/OffreException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Adresse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Agence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Categorie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Chambre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Hotel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Offre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Reservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/repository/AgenceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/repository/HotelRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/repository/OffreRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/repository/ReservationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceDisponibilite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceDisponibiliteInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceReservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceReservationInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/test/java/com/tp_archi_distribuee/soap/SoapApplicationTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="37GsMlroioZr3xbUgkq1rGONsZD" />
+  <component name="ProjectId" id="37FoS2vxLucm2urvsasIG9Sp7LN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
     &quot;Application.SoapApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.com.tp_archi_distribuee.soap.SoapApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.soap [install].executor&quot;: &quot;Run&quot;,
+    &quot;Application.SoapClientApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.org.anonbnr.web_services.employeeservice.client [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.org.anonbnr.web_services.employeeservice.server [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.soapClient [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.soapClient [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.soapClient [install].executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;server-branch&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.14482759&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.com.tp_archi_distribuee.soap.SoapApplication">
-    <configuration name="SoapApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.tp_archi_distribuee.soapClient.SoapApplication" />
-      <module name="soapClient" />
+  <component name="RunManager" selected="Application.SoapClientApplication">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.anonbnr.web_services.employeeservice.main.Application" />
+      <module name="org.anonbnr.web_services.employeeservice.client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.tp_archi_distribuee.soapClient.*" />
+          <option name="PATTERN" value="org.anonbnr.web_services.employeeservice.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -46,7 +100,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.tp_archi_distribuee.soap.SoapApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="SoapApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.tp_archi_distribuee.soap.SoapApplication" />
       <module name="soap" />
       <extension name="coverage">
@@ -59,20 +113,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SoapClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tp_archi_distribuee.soapClient.SoapClientApplication" />
+      <module name="soapClient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tp_archi_distribuee.soapClient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.tp_archi_distribuee.soap.SoapApplication" />
+        <item itemvalue="Application.SoapClientApplication" />
         <item itemvalue="Application.SoapApplication" />
+        <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="acd0ef16-524f-463d-8899-4f7da4cbb94e" name="Changes" comment="" />
-      <created>1766540698742</created>
+      <changelist id="6d9b6b75-a3cf-47a8-9101-e003de8ef91d" name="Changes" comment="" />
+      <created>1766508177925</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1766540698742</updated>
+      <updated>1766508177925</updated>
     </task>
     <servers />
   </component>
