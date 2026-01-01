@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://service.soap.tp_archi_distribuee.com/"
+        xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+        targetNamespace="http://service.soap.tp_archi_distribuee.com/"
+        name="HotelServiceDisponibiliteService">
+
+    <!-- ================= TYPES ================= -->
+    <types>
+        <xsd:schema
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:tns="http://service.soap.tp_archi_distribuee.com/"
+                targetNamespace="http://service.soap.tp_archi_distribuee.com/"
+                elementFormDefault="qualified">
+
+            <xsd:element name="consulterDisponibilite" type="tns:consulterDisponibilite"/>
+            <xsd:element name="consulterDisponibiliteResponse" type="tns:consulterDisponibiliteResponse"/>
+
+            <xsd:complexType name="consulterDisponibilite">
+                <xsd:sequence>
+                    <xsd:element name="arg0" type="xsd:int"/>
+                    <xsd:element name="arg1" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="arg2" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="arg3" type="xsd:dateTime" minOccurs="0"/>
+                    <xsd:element name="arg4" type="xsd:dateTime" minOccurs="0"/>
+                    <xsd:element name="arg5" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="consulterDisponibiliteResponse">
+                <xsd:sequence>
+                    <xsd:element name="return" type="tns:offre" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="offre">
+                <xsd:sequence>
+                    <xsd:element name="agence" type="tns:agence" minOccurs="0"/>
+                    <xsd:element name="chambre" type="tns:chambre" minOccurs="0"/>
+                    <xsd:element name="dateDebutDisponibilte" type="xsd:dateTime" minOccurs="0"/>
+                    <xsd:element name="datefinDisponibilite" type="xsd:dateTime" minOccurs="0"/>
+                    <xsd:element name="hotel" type="tns:hotel" minOccurs="0"/>
+                    <xsd:element name="nbrelits" type="xsd:int"/>
+                    <xsd:element name="prix" type="xsd:double"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="agence">
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="motDePasse" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="nom" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="chambre">
+                <xsd:sequence>
+                    <xsd:element name="img" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="nbLits" type="xsd:int"/>
+                    <xsd:element name="prix" type="xsd:double"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="hotel">
+                <xsd:sequence>
+                    <xsd:element name="adresse" type="tns:adresse" minOccurs="0"/>
+                    <xsd:element name="categorie" type="tns:categorie" minOccurs="0"/>
+                    <xsd:element name="nbLits" type="xsd:int"/>
+                    <xsd:element name="nom" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="adresse">
+                <xsd:sequence>
+                    <xsd:element name="cite" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="gpsPosition" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="pays" type="xsd:string" minOccurs="0"/>
+                    <xsd:element name="rue" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:simpleType name="categorie">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="etoiles2"/>
+                    <xsd:enumeration value="etoiles3"/>
+                    <xsd:enumeration value="etoiles4"/>
+                    <xsd:enumeration value="etoiles5"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+
+        </xsd:schema>
+    </types>
+
+    <!-- ================= MESSAGES ================= -->
+    <message name="consulterDisponibilite">
+        <part name="parameters" element="tns:consulterDisponibilite"/>
+    </message>
+
+    <message name="consulterDisponibiliteResponse">
+        <part name="parameters" element="tns:consulterDisponibiliteResponse"/>
+    </message>
+
+    <!-- ================= PORT TYPE ================= -->
+    <portType name="HotelServiceDisponibiliteInterface">
+        <operation name="consulterDisponibilite">
+            <input
+                    wsam:Action="http://service.soap.tp_archi_distribuee.com/HotelServiceDisponibiliteInterface/consulterDisponibiliteRequest"
+                    message="tns:consulterDisponibilite"/>
+            <output
+                    wsam:Action="http://service.soap.tp_archi_distribuee.com/HotelServiceDisponibiliteInterface/consulterDisponibiliteResponse"
+                    message="tns:consulterDisponibiliteResponse"/>
+        </operation>
+    </portType>
+
+    <!-- ================= BINDING ================= -->
+    <binding name="HotelServiceDisponibilitePortBinding"
+             type="tns:HotelServiceDisponibiliteInterface">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="consulterDisponibilite">
+            <soap:operation soapAction=""/>
+            <input><soap:body use="literal"/></input>
+            <output><soap:body use="literal"/></output>
+        </operation>
+    </binding>
+
+    <!-- ================= SERVICE ================= -->
+    <service name="HotelServiceDisponibiliteService">
+        <port name="HotelServiceDisponibilitePort"
+              binding="tns:HotelServiceDisponibilitePortBinding">
+            <soap:address location="http://localhost:8082/Server1/Disponibilite"/>
+        </port>
+    </service>
+
+</definitions>
