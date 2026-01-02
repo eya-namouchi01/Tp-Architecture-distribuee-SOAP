@@ -3,9 +3,7 @@ package com.tp_archi_distribuee.soapClient.client;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -19,7 +17,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="cvv" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="dateExpiration" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="dateExpiration" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="numCarte" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -38,8 +36,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class CreditCard {
 
     protected String cvv;
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar dateExpiration;
+    protected String dateExpiration;
     protected String numCarte;
 
     /**
@@ -71,10 +68,10 @@ public class CreditCard {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getDateExpiration() {
+    public String getDateExpiration() {
         return dateExpiration;
     }
 
@@ -83,10 +80,10 @@ public class CreditCard {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setDateExpiration(XMLGregorianCalendar value) {
+    public void setDateExpiration(String value) {
         this.dateExpiration = value;
     }
 

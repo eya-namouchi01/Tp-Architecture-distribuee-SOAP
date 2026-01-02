@@ -1,13 +1,20 @@
 package com.tp_archi_distribuee.soapClient.clientGUI;
 import com.tp_archi_distribuee.soapClient.SoapServiceClient;
 import com.tp_archi_distribuee.soapClient.client.Offre;
-import javax.swing.*; import javax.xml.datatype.DatatypeConstants;
+import javax.swing.*;
+import javax.xml.datatype.DatatypeConstants;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-import java.awt.*; import java.util.Date; import java.util.GregorianCalendar;
+import java.awt.*;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
-public class SoapClientGUI extends JFrame
-{ private SoapServiceClient serviceClient;
+
+
+
+public class SoapClientGUI extends JFrame {
+
+    private SoapServiceClient serviceClient;
     private JTextField agenceId = new JTextField();
     private JTextField login = new JTextField();
     private JTextField password = new JTextField();
@@ -15,6 +22,8 @@ public class SoapClientGUI extends JFrame
     private JSpinner dateDebut;
     private JSpinner dateFin;
     private JPanel offresPanel = new JPanel();
+
+
     public SoapClientGUI() throws Exception
     { serviceClient = new SoapServiceClient();
         setTitle("Reservation Hotel");
@@ -27,6 +36,7 @@ public class SoapClientGUI extends JFrame
         dateFin = new JSpinner(new SpinnerDateModel());
         dateFin.setEditor(
                  new JSpinner.DateEditor(dateFin, "yyyy-MM-dd"));
+
         //Formulaire
         JPanel form = new JPanel(new GridLayout(7, 2, 8, 8));
         form.setBorder(BorderFactory.createTitledBorder("Recherche"));
@@ -36,13 +46,16 @@ public class SoapClientGUI extends JFrame
         form.add(new JLabel("Date début")); form.add(dateDebut);
         form.add(new JLabel("Date fin")); form.add(dateFin);
         form.add(new JLabel("Nb personnes")); form.add(personnes);
+
         // Bouton
         JButton callBtn = new JButton("Consulter les offres");
         callBtn.setPreferredSize(new Dimension(180, 30));
         callBtn.addActionListener(e -> callService());
+
         // Panel Boutton
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.add(callBtn);
+
         // Panel des offres
         offresPanel.setLayout(new BoxLayout(offresPanel, BoxLayout.Y_AXIS));
         JScrollPane scroll = new JScrollPane(offresPanel);
@@ -50,7 +63,8 @@ public class SoapClientGUI extends JFrame
         JPanel centerPanel = new JPanel(new BorderLayout());
         centerPanel.add(buttonPanel, BorderLayout.NORTH);
         centerPanel.add(scroll, BorderLayout.CENTER);
-        // ===== Ajout au JFrame
+
+        // Ajout au JFrame
         add(form, BorderLayout.NORTH);
         add(centerPanel, BorderLayout.CENTER); }
     private void callService() { try
@@ -67,35 +81,83 @@ public class SoapClientGUI extends JFrame
             return; }
         for (Offre offre : offres) {
             offresPanel.add(createOffrePanel(offre)); }
-        
+
         offresPanel.revalidate(); offresPanel.repaint(); }
     catch (Exception ex) {
         JOptionPane.showMessageDialog(this, ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
         ex.printStackTrace(); } }
-// ===== Création d’un panel pour UNE offre
-private JPanel createOffrePanel(Offre offre)
-{ JPanel panel = new JPanel(new BorderLayout(10, 10));
-    panel.setBorder(BorderFactory.createCompoundBorder( BorderFactory.createTitledBorder("Offre"), BorderFactory.createEmptyBorder(10, 10, 10, 10) ));
-    // ===== Détails de l'offre
+
+//Création d’un panel pour UNE offre
+private JPanel createOffrePanel(Offre offre) {
+
+    JPanel panel = new JPanel(new BorderLayout(10, 10));
+    panel.setBorder(
+            BorderFactory.createCompoundBorder(
+                    BorderFactory.createTitledBorder("Offre"),
+                    BorderFactory.createEmptyBorder(10, 10, 10, 10)
+            )
+    );
+
+    // Détails de l'offre
     JTextArea details = new JTextArea();
     details.setEditable(false);
     details.setLineWrap(true);
     details.setWrapStyleWord(true);
-    details.setText( "Hôtel : " + offre.getHotel().getNom() + "\n" +
-            "Prix : " + offre.getPrix() + "\n" +
-            "Nombre de lits : " + offre.getNbreLits() + "\n" +
-            "Date début : " + offre.getDateDebutDisponibilte() + "\n" +
-            "Date fin : " + offre.getDatefinDisponibilite() );
+    details.setText(
+            "Hôtel : " + offre.getHotel().getNom() + "\n" +
+                    "Prix : " + offre.getPrix() + "\n" +
+                    "Id : " + offre.getId() + "\n" +
+                    "Nombre de lits : " + offre.getNbreLits() + "\n" +
+                    "Date début : " + offre.getDateDebutDisponibilte() + "\n" +
+                    "Date fin : " + offre.getDatefinDisponibilite()
+    );
+
     panel.add(details, BorderLayout.CENTER);
-    if (offre.getChambre() != null && offre.getChambre().getImg() != null && offre.getChambre().getImg().length > 0) {
+
+    // Image
+    JLabel imageLabel;
+    if (offre.getChambre() != null &&
+            offre.getChambre().getImg() != null &&
+            offre.getChambre().getImg().length > 0) {
+
         try {
             byte[] imgBytes = offre.getChambre().getImg();
             ImageIcon icon = new ImageIcon(imgBytes);
-            Image img = icon.getImage().getScaledInstance(150, 100, Image.SCALE_SMOOTH);
-            JLabel imageLabel = new JLabel(new ImageIcon(img)); panel.add(imageLabel, BorderLayout.WEST); }
-        catch (Exception e) {
-            JLabel placeholder = new JLabel("Image non lisible"); panel.add(placeholder, BorderLayout.WEST); } }
-else { JLabel placeholder = new JLabel("Pas d'image disponible"); panel.add(placeholder, BorderLayout.WEST); } return panel; }
+            Image img = icon.getImage()
+                    .getScaledInstance(150, 100, Image.SCALE_SMOOTH);
+            imageLabel = new JLabel(new ImageIcon(img));
+        } catch (Exception e) {
+            imageLabel = new JLabel("Image non lisible");
+        }
+    } else {
+        imageLabel = new JLabel("Pas d'image disponible");
+    }
+
+    panel.add(imageLabel, BorderLayout.WEST);
+
+    //Bouton Réserver
+    JButton reserverBtn = new JButton("Réserver");
+    reserverBtn.addActionListener(e -> {
+        ReservationDialog dialog = new ReservationDialog(
+                this,
+                serviceClient,
+                offre,
+                Integer.parseInt(agenceId.getText()),
+                login.getText(),
+                password.getText()
+        );
+        dialog.setVisible(true);
+    });
+
+
+    JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+    btnPanel.add(reserverBtn);
+
+    panel.add(btnPanel, BorderLayout.SOUTH);
+
+    return panel;
+}
+
 
     private XMLGregorianCalendar toXMLDate(Date date) throws Exception
     { GregorianCalendar gc = new GregorianCalendar(); gc.setTime(date);

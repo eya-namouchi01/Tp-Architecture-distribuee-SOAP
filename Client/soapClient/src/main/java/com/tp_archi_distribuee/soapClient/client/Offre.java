@@ -23,6 +23,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="dateDebutDisponibilte" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="datefinDisponibilite" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="hotel" type="{http://service.soap.tp_archi_distribuee.com/}hotel" minOccurs="0"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="nbreLits" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="prix" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *       &lt;/sequence&gt;
@@ -40,6 +41,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "dateDebutDisponibilte",
     "datefinDisponibilite",
     "hotel",
+    "id",
     "nbreLits",
     "prix"
 })
@@ -52,6 +54,7 @@ public class Offre {
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar datefinDisponibilite;
     protected Hotel hotel;
+    protected int id;
     protected int nbreLits;
     protected double prix;
 
@@ -173,6 +176,22 @@ public class Offre {
      */
     public void setHotel(Hotel value) {
         this.hotel = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété id.
+     * 
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Définit la valeur de la propriété id.
+     * 
+     */
+    public void setId(int value) {
+        this.id = value;
     }
 
     /**
