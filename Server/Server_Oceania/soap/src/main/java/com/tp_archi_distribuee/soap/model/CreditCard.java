@@ -23,7 +23,7 @@ public class CreditCard {
     private String numCarte;
     @Getter
     @Setter
-    private Date dateExpiration;
+    private String dateExpiration;
     @Getter
     @Setter
     private String cvv;

@@ -28,9 +28,9 @@ public class HotelServiceDisponibilite implements HotelServiceDisponibiliteInter
     private AgenceRepository agenceRepo;
     private ArrayList<Offre> offresPresentes= new ArrayList<>();
 
-  /*  public HotelServiceDisponibilite( int idHotel){
-        offresPresentes= offreRepo.findByHotelId(idHotel);
-    }*/
+    /*  public HotelServiceDisponibilite( int idHotel){
+          offresPresentes= offreRepo.findByHotelId(idHotel);
+      }*/
     public void loadOffres(int idHotel) {
         offresPresentes = offreRepo.findByHotelId(idHotel);
     }
@@ -68,7 +68,6 @@ public class HotelServiceDisponibilite implements HotelServiceDisponibiliteInter
         return offres;
     }
 }
-
 
 
 

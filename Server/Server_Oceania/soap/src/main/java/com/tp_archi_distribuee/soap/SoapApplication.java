@@ -3,7 +3,6 @@ package com.tp_archi_distribuee.soap;
 import com.tp_archi_distribuee.soap.service.HotelServiceDisponibilite;
 import com.tp_archi_distribuee.soap.service.HotelServiceReservation;
 import com.tp_archi_distribuee.soap.service.HotelServiceReservationInterface;
-//import jakarta.xml.ws.Endpoint;
 import javax.xml.ws.Endpoint;
 
 

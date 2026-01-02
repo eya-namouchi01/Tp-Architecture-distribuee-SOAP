@@ -5,40 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d9b6b75-a3cf-47a8-9101-e003de8ef91d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Tp_Archi_Dis_SOAP.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/SoapApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/exception/InvalidAgenceException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/exception/LitException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/exception/OffreException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Adresse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Agence.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Categorie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Chambre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Hotel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Offre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/model/Reservation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/repository/AgenceRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/repository/HotelRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/repository/OffreRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/repository/ReservationRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceDisponibilite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceDisponibiliteInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceReservation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceReservationInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server1/soap/src/test/java/com/tp_archi_distribuee/soap/SoapApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/SoapApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/SoapApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/model/CreditCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/model/CreditCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/model/Offre.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/model/Offre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceDisponibilite.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceDisponibilite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceDisponibiliteInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceDisponibiliteInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server_Oceania/soap/src/main/java/com/tp_archi_distribuee/soap/service/HotelServiceReservation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +44,8 @@
     &quot;Application.SoapClientApplication.executor&quot;: &quot;Run&quot;,
     &quot;Maven.org.anonbnr.web_services.employeeservice.client [install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.org.anonbnr.web_services.employeeservice.server [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.soap [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.soap [install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.soapClient [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.soapClient [compile].executor&quot;: &quot;Run&quot;,
     &quot;Maven.soapClient [install].executor&quot;: &quot;Run&quot;,
@@ -81,12 +56,13 @@
     &quot;git-widget-placeholder&quot;: &quot;server-branch&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.14482759&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.14482759&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.SoapClientApplication">
+  <component name="RunManager" selected="Application.SoapApplication">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.anonbnr.web_services.employeeservice.main.Application" />
       <module name="org.anonbnr.web_services.employeeservice.client" />
@@ -128,8 +104,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SoapClientApplication" />
         <item itemvalue="Application.SoapApplication" />
+        <item itemvalue="Application.SoapClientApplication" />
         <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
