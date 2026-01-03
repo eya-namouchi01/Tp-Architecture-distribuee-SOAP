@@ -55,6 +55,5 @@ INSERT INTO reservation (
   date_sortie,
   client_email
 ) VALUES
-(1, '2025-12-01 14:00:00', '2025-12-05 12:00:00', 'client1@email.com'),
 (2, '2025-12-06 14:00:00', '2025-12-10 12:00:00', 'client2@email.com'),
 (3, '2025-12-11 14:00:00', '2025-12-15 12:00:00', 'client3@email.com');
