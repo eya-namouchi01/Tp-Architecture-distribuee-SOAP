@@ -37,7 +37,12 @@ public class HotelServiceReservation implements HotelServiceReservationInterface
 
         Client client = clientRepo.findByEmail(email)
                 .orElseThrow(() -> new ClientException("Vos identifiants sont incorrects."));
-        if (!(client.getCreditCard().equals(creditCard))) throw new ClientException("Vos identifiants sont incorrects.");
+        if (!
+                (client.getCreditCard().getDateExpiration().equals(creditCard.getDateExpiration())) &&
+                (client.getCreditCard().getCvv().equals(creditCard.getCvv()))&&
+                (client.getCreditCard().getNumCarte().equals(creditCard.getNumCarte()))
+        )
+            throw new ClientException("Vos identifiants sont incorrects.");
 
 
         Reservation reservation= new Reservation (offre.getHotel().getId(),
