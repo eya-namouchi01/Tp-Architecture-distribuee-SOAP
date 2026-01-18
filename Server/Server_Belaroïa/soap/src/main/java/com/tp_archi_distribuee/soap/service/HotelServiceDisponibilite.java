@@ -33,15 +33,11 @@ public class HotelServiceDisponibilite implements HotelServiceDisponibiliteInter
 
     public ArrayList<Offre> consulterDisponibilite(int agenceId, String login, String motDePasse, XMLGregorianCalendar dateDebutXML, XMLGregorianCalendar  dateFinXML, int nbrePersonne)
     {
-        Date dateDebut = dateDebutXML.toGregorianCalendar().getTime();
-        Date dateFin = dateFinXML.toGregorianCalendar().getTime();
-        ArrayList<Offre> offresPresentes =
-                new ArrayList<>(offreRepo.findByHotelId(2));
-
+        ArrayList<Offre> offresPresentes= new ArrayList<>(offreRepo.findByHotelId(2));
         ArrayList<Offre>offres= offresPresentes;
 
-        Iterator<Offre> it = offres.iterator();
-
+        Date dateDebut = dateDebutXML.toGregorianCalendar().getTime();
+        Date dateFin = dateFinXML.toGregorianCalendar().getTime();
 
         Agence agence = agenceRepo.findById(agenceId)
                 .filter(a -> a.authentifier(login, motDePasse))
@@ -49,13 +45,14 @@ public class HotelServiceDisponibilite implements HotelServiceDisponibiliteInter
 
 
         if (offresPresentes.isEmpty()) {
-            throw new OffreException("Aucune offre n’est disponibleKL pour la période et le nombre de .");
+            throw new OffreException("Aucune offre n’est disponible pour la période et le nombre de personnes indiqués.");
         }
 
         if (nbrePersonne <= 0 ) {
             throw new OffreException("Le nombre de personnes doit être supérieur à zéro.");
         }
 
+        Iterator<Offre> it = offres.iterator();
 
         while (it.hasNext()) {
             Offre offre = it.next();
@@ -66,17 +63,23 @@ public class HotelServiceDisponibilite implements HotelServiceDisponibiliteInter
                 it.remove();
             }
         }
+
         if (offres.isEmpty()) {
-            throw new OffreException("Aucune offre n’est disponible pour la période et le nombre de personnes indiqués.");
+            throw new OffreException(
+                    "Aucune offre n’est disponible pour la période et le nombre de personnes indiqués."
+            );
         }
 
-       /* for (Offre offre : offresPresentes) {
 
-                if (dateDebut.before(offre.getDateDebutDisponibilte())
-                        || dateFin.after(offre.getDatefinDisponibilite())) {
+        /*for (Offre offre : offresPresentes) {
+            if (nbrePersonne <= 0 ) {
+                offres.remove(offre);
+                throw new OffreException("Le nombre de personnes doit être supérieur à zéro.");
+            }
 
-                    offres.remove(offre);
-                if (offres.isEmpty()) throw new OffreException("Aucune offre n’est disponible pour la période sélectionnée.");
+            if (dateDebut.before(offre.getDateDebutDisponibilte()) && dateFin.after(offre.getDatefinDisponibilite())) {
+                offres.remove(offre);
+                throw new OffreException("Aucune offre n’est disponible pour la période sélectionnée.");
             }
 
             if (nbrePersonne > offre.getNbreLits()){
