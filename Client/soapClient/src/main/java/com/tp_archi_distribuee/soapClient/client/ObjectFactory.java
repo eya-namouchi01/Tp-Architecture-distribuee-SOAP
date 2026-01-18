@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private static final QName _EffectuerReservation_QNAME = new QName("http://service.soap.tp_archi_distribuee.com/", "effectuerReservation");
-    private static final QName _EffectuerReservationResponse_QNAME = new QName("http://service.soap.tp_archi_distribuee.com/", "effectuerReservationResponse");
+    private static final QName _ConsulterDisponibilite_QNAME = new QName("http://service.soap.tp_archi_distribuee.com/", "consulterDisponibilite");
+    private static final QName _ConsulterDisponibiliteResponse_QNAME = new QName("http://service.soap.tp_archi_distribuee.com/", "consulterDisponibiliteResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.tp_archi_distribuee.soapClient.client
@@ -35,53 +35,85 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link EffectuerReservation }
+     * Create an instance of {@link ConsulterDisponibilite }
      * 
      */
-    public EffectuerReservation createEffectuerReservation() {
-        return new EffectuerReservation();
+    public ConsulterDisponibilite createConsulterDisponibilite() {
+        return new ConsulterDisponibilite();
     }
 
     /**
-     * Create an instance of {@link EffectuerReservationResponse }
+     * Create an instance of {@link ConsulterDisponibiliteResponse }
      * 
      */
-    public EffectuerReservationResponse createEffectuerReservationResponse() {
-        return new EffectuerReservationResponse();
+    public ConsulterDisponibiliteResponse createConsulterDisponibiliteResponse() {
+        return new ConsulterDisponibiliteResponse();
     }
 
     /**
-     * Create an instance of {@link CreditCard }
+     * Create an instance of {@link Offre }
      * 
      */
-    public CreditCard createCreditCard() {
-        return new CreditCard();
+    public Offre createOffre() {
+        return new Offre();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EffectuerReservation }{@code >}
+     * Create an instance of {@link Agence }
+     * 
+     */
+    public Agence createAgence() {
+        return new Agence();
+    }
+
+    /**
+     * Create an instance of {@link Chambre }
+     * 
+     */
+    public Chambre createChambre() {
+        return new Chambre();
+    }
+
+    /**
+     * Create an instance of {@link Hotel }
+     * 
+     */
+    public Hotel createHotel() {
+        return new Hotel();
+    }
+
+    /**
+     * Create an instance of {@link Adresse }
+     * 
+     */
+    public Adresse createAdresse() {
+        return new Adresse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConsulterDisponibilite }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link EffectuerReservation }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link ConsulterDisponibilite }{@code >}
      */
-    @XmlElementDecl(namespace = "http://service.soap.tp_archi_distribuee.com/", name = "effectuerReservation")
-    public JAXBElement<EffectuerReservation> createEffectuerReservation(EffectuerReservation value) {
-        return new JAXBElement<EffectuerReservation>(_EffectuerReservation_QNAME, EffectuerReservation.class, null, value);
+    @XmlElementDecl(namespace = "http://service.soap.tp_archi_distribuee.com/", name = "consulterDisponibilite")
+    public JAXBElement<ConsulterDisponibilite> createConsulterDisponibilite(ConsulterDisponibilite value) {
+        return new JAXBElement<ConsulterDisponibilite>(_ConsulterDisponibilite_QNAME, ConsulterDisponibilite.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EffectuerReservationResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConsulterDisponibiliteResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link EffectuerReservationResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link ConsulterDisponibiliteResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://service.soap.tp_archi_distribuee.com/", name = "effectuerReservationResponse")
-    public JAXBElement<EffectuerReservationResponse> createEffectuerReservationResponse(EffectuerReservationResponse value) {
-        return new JAXBElement<EffectuerReservationResponse>(_EffectuerReservationResponse_QNAME, EffectuerReservationResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://service.soap.tp_archi_distribuee.com/", name = "consulterDisponibiliteResponse")
+    public JAXBElement<ConsulterDisponibiliteResponse> createConsulterDisponibiliteResponse(ConsulterDisponibiliteResponse value) {
+        return new JAXBElement<ConsulterDisponibiliteResponse>(_ConsulterDisponibiliteResponse_QNAME, ConsulterDisponibiliteResponse.class, null, value);
     }
 
 }

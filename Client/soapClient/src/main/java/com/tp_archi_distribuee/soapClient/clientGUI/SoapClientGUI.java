@@ -87,7 +87,19 @@ public class SoapClientGUI extends JFrame {
         JOptionPane.showMessageDialog(this, ex.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
         ex.printStackTrace(); } }
 
-//Création d’un panel pour UNE offre
+
+
+    private String formatXMLDate(XMLGregorianCalendar date) {
+        if (date == null) return "";
+        return String.format(
+                "%04d-%02d-%02d",
+                date.getYear(),
+                date.getMonth(),
+                date.getDay()
+        );
+    }
+
+    //Création d’un panel pour UNE offre
 private JPanel createOffrePanel(Offre offre) {
 
     JPanel panel = new JPanel(new BorderLayout(10, 10));
@@ -108,8 +120,9 @@ private JPanel createOffrePanel(Offre offre) {
                     "Prix : " + offre.getPrix() + "\n" +
                     "Id : " + offre.getId() + "\n" +
                     "Nombre de lits : " + offre.getNbreLits() + "\n" +
-                    "Date début : " + offre.getDateDebutDisponibilte() + "\n" +
-                    "Date fin : " + offre.getDatefinDisponibilite()
+                    "Date début : " + formatXMLDate(offre.getDateDebutDisponibilte()) + "\n" +
+                    "Date fin : " + formatXMLDate(offre.getDatefinDisponibilite())
+
     );
 
     panel.add(details, BorderLayout.CENTER);
