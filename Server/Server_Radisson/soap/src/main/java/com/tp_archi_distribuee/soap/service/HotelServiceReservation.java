@@ -26,7 +26,6 @@ public class HotelServiceReservation implements HotelServiceReservationInterface
     private ClientRepository clientRepo;
 
     public String effectuerReservation(int offreId, int agenceId, String login, String motDePasse,String email, String nom, CreditCard creditCard )
-
     {
         Offre offre= offreRepo.findById(offreId)
                 .orElseThrow(() -> new OffreException("Aucune offre dont cet identifiant n'est disponible"));
@@ -37,12 +36,13 @@ public class HotelServiceReservation implements HotelServiceReservationInterface
 
         Client client = clientRepo.findByEmail(email)
                 .orElseThrow(() -> new ClientException("Vos identifiants sont incorrects."));
-        if (!
-                (client.getCreditCard().getDateExpiration().equals(creditCard.getDateExpiration())) &&
-                (client.getCreditCard().getCvv().equals(creditCard.getCvv()))&&
-                (client.getCreditCard().getNumCarte().equals(creditCard.getNumCarte()))
-        )
+        if (
+                !client.getCreditCard().getDateExpiration().equals(creditCard.getDateExpiration()) ||
+                        !client.getCreditCard().getCvv().equals(creditCard.getCvv()) ||
+                        !client.getCreditCard().getNumCarte().equals(creditCard.getNumCarte())
+        ) {
             throw new ClientException("Vos identifiants sont incorrects.");
+        }
 
 
         Reservation reservation= new Reservation (offre.getHotel().getId(),
@@ -51,7 +51,6 @@ public class HotelServiceReservation implements HotelServiceReservationInterface
                 offre.getDatefinDisponibilite(),
                 client);
         reservartionRepo.save(reservation);
-
         return null;
     }
 
