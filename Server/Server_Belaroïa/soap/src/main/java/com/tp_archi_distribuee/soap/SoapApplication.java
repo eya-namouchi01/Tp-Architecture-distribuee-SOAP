@@ -33,7 +33,6 @@ public class SoapApplication {
 
         HotelServiceDisponibilite hotelserviceDisponibilite = context.getBean(HotelServiceDisponibilite.class);
             // Publication du service web
-        hotelserviceDisponibilite.loadOffres(2);
         Endpoint.publish(SERVICE1_URI, hotelserviceDisponibilite);
             System.err.println("Web Service 1 successfully published at: " +
                     SERVICE1_URI);

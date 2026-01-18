@@ -16,29 +16,28 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 
 
 @Service
 @WebService(endpointInterface="com.tp_archi_distribuee.soap.service.HotelServiceDisponibiliteInterface")
 public class HotelServiceDisponibilite implements HotelServiceDisponibiliteInterface {
+    @Autowired
     private HotelRepository hotelRepo;
     @Autowired
     private OffreRepository offreRepo;
     @Autowired
     private AgenceRepository agenceRepo;
-    private ArrayList<Offre> offresPresentes= new ArrayList<>();
 
-    /*  public HotelServiceDisponibilite( int idHotel){
-          offresPresentes= offreRepo.findByHotelId(idHotel);
-      }*/
-    public void loadOffres(int idHotel) {
-        offresPresentes = offreRepo.findByHotelId(idHotel);
-    }
+
+
     public ArrayList<Offre> consulterDisponibilite(int agenceId, String login, String motDePasse, XMLGregorianCalendar dateDebutXML, XMLGregorianCalendar  dateFinXML, int nbrePersonne)
     {
+        ArrayList<Offre> offresPresentes= new ArrayList<>(offreRepo.findByHotelId(1));
+        ArrayList<Offre>offres= offresPresentes;
+
         Date dateDebut = dateDebutXML.toGregorianCalendar().getTime();
         Date dateFin = dateFinXML.toGregorianCalendar().getTime();
-        ArrayList<Offre>offres= offresPresentes;
 
         Agence agence = agenceRepo.findById(agenceId)
                 .filter(a -> a.authentifier(login, motDePasse))
@@ -49,7 +48,30 @@ public class HotelServiceDisponibilite implements HotelServiceDisponibiliteInter
             throw new OffreException("Aucune offre n’est disponible pour la période et le nombre de personnes indiqués.");
         }
 
-        for (Offre offre : offresPresentes) {
+        if (nbrePersonne <= 0 ) {
+            throw new OffreException("Le nombre de personnes doit être supérieur à zéro.");
+        }
+
+        Iterator<Offre> it = offres.iterator();
+
+        while (it.hasNext()) {
+            Offre offre = it.next();
+
+            if (dateDebut.before(offre.getDateDebutDisponibilte())
+                    || dateFin.after(offre.getDatefinDisponibilite())
+                    || nbrePersonne > offre.getNbreLits()) {
+                it.remove();
+            }
+        }
+
+        if (offres.isEmpty()) {
+            throw new OffreException(
+                    "Aucune offre n’est disponible pour la période et le nombre de personnes indiqués."
+            );
+        }
+
+
+        /*for (Offre offre : offresPresentes) {
             if (nbrePersonne <= 0 ) {
                 offres.remove(offre);
                 throw new OffreException("Le nombre de personnes doit être supérieur à zéro.");
@@ -64,7 +86,7 @@ public class HotelServiceDisponibilite implements HotelServiceDisponibiliteInter
                 offres.remove(offre);
                 if (offres.isEmpty()) throw new OffreException("Nombre de personnes élevé. Aucune offre n’est disponible pour ce nombre.");
             }
-        }
+        }*/
         return offres;
     }
 }
